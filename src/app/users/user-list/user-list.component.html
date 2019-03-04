@@ -1,0 +1,42 @@
+<div *ngIf="!showAddOption">
+    <h1>lista de usuários</h1>
+    <a class="addButton" (click)="handleAdd()">Novo</a>
+    <a class="addButton" (click)="getUsers()">Atualizar Lista</a>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>NOME</th>
+                    <th>CPF</th>
+                    <th>EMAIL</th>
+                    <th>EDITAR</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let user of users">
+                <td>{{user.name}}</td>
+                <td>{{user.cpf}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <a routerLink="/edit/{{user._id}}">
+                        <button class="list">
+                            Editar
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!--colocar o css para aparecer o form de input-->
+<div *ngIf="showAddOption">
+    <h1>Novo Usuário</h1>
+    <div class="add-wrapper">    
+        <h2>Adicionar Usuário</h2>
+        <p>Os campos em vermelho são obrigatórios</p>
+        <app-user-form [userfg]="addUserForm"> </app-user-form>
+        <p>*Obs: Recarregue a página para visualizar os contatos recem adicionados</p>
+        <button class="success" (click)="addUser()" [class]="addUserForm.invalid ? 'invalidForm': 'success' "
+            [disabled]="addUserForm.invalid">Salvar</button>
+        <button class="danger" (click)="showAddOption = false">Cancelar</button>
+    </div>
+</div>

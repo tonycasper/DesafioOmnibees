@@ -1,0 +1,18 @@
+<div [formGroup]="userfg" class="form">
+  <label for="name">Nome: </label>
+  <input id="name" 
+    [class]="userfg.controls.name.invalid ? 'error-class' : 'input' "
+    formControlName="name"
+    placeholder="Nome" />
+  
+  <label for="email">Email: </label>  
+  <input id="email" [class]="userfg.controls.email.invalid ? 'error-class' : '' " formControlName="email"
+    placeholder="E-mail" />  
+  <label for="cpf">CPF: </label>  
+  <input id="cpf" [class]="userfg.controls.email.invalid ? 'error-class' : '' " formControlName="cpf"
+    placeholder="CPF  " />  
+  <label>Rua: </label>  
+  <input id="street" formControlName="street" placeholder="Rua" />  
+  <label for="telephone">Telefone:</label>  
+  <input class="input " id="telephone" formControlName="telephone" placeholder="Telefone" />  
+</div>

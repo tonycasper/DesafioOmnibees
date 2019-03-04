@@ -1,0 +1,24 @@
+.error-class {
+    border: 1px solid red;
+}
+
+.form{
+    border: 1px solid black;
+    width: 270px;
+    padding: 10px 5px 5px;    
+    margin-bottom: 20px;
+}
+
+.input-container {
+    position: relative;
+  }
+  
+  input {
+    border: 0;
+    border-bottom: 2px solid #9e9e9e;        
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }   

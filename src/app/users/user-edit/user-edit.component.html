@@ -1,0 +1,17 @@
+<div *ngIf="user">
+  <div>
+    <h1>Editar Usuário</h1>
+    <a class="addButton" (click)="goBack()">Voltar</a>        
+    <div class="edit-wrapper">
+      <h3>Edite o Usuário e clique em salvar</h3>
+      <div class="left">
+        <app-user-form [userfg]="userFormGroup">
+        </app-user-form>
+        <button class="success" (click)="update(user)">Salvar</button>
+        <button class="danger" (click)="delete(user)">Deletar</button>
+      </div>
+      <div class="divisor"></div>
+      <div class="right"></div>
+    </div>
+  </div>
+</div>
