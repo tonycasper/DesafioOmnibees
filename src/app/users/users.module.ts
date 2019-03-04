@@ -30,10 +30,7 @@ import { UserService } from './user-service.service';
     ],
     providers: [
         UserListComponent
-    ],
-    exports:[
-        UserService
-    ]
+    ]   
 
 })
 
