@@ -37,7 +37,7 @@ export class UserEditComponent implements OnInit {
       'street': [this.user.street],      
       'telephone': [this.user.telephone],
     });
-  }
+  } 
 
   getUser(){    
     const id = this.route.snapshot.paramMap.get('id');

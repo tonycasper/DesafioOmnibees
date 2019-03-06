@@ -1,7 +1,6 @@
 <div *ngIf="!showAddOption">
     <h1>lista de usuários</h1>
     <a class="addButton" (click)="handleAdd()">Novo</a>
-    <a class="addButton" (click)="getUsers()">Atualizar Lista</a>
     <div class="table-wrapper">
         <table class="fl-table">
             <thead>
@@ -36,6 +35,6 @@
         <app-user-form [userfg]="addUserForm"> </app-user-form>        
         <button class="success" (click)="addUser()" [class]="addUserForm.invalid ? 'invalidForm': 'success' "
             [disabled]="addUserForm.invalid">Salvar</button>
-        <button class="danger" (click)="showAddOption = false">Cancelar</button>
+        <button class="danger" (click)="cancel()">Cancelar</button>
     </div>
 </div>

@@ -32,11 +32,20 @@ export class UserListComponent implements OnInit {
       .subscribe(users => this.users = users);
   }
 
+  cancel(){
+    this.getUsers();
+    this.showAddOption = false;    
+  }
+
   addUser(): void {    
     const user = this.addUserForm.value;
     this.userService
     .addUser(user)
-    .subscribe(() => this.showAddOption = false);
+    .subscribe(() => {
+      this.showAddOption = false;
+      this.getUsers();
+    });
+    
   }
 
   handleAdd() {
