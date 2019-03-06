@@ -38,10 +38,8 @@ export class UserService {
     }
 
 
-    deleteUser(user: User) {
-        debugger
-        const id = typeof user === 'number' ? user : user._id;
-        console.log(user);
+    deleteUser(user: User) {        
+        const id = typeof user === 'number' ? user : user._id;            
         const url = `${userUrl}/users/user/${id}`;        
         return this.http.delete<User>(url, httpOptions);
     }

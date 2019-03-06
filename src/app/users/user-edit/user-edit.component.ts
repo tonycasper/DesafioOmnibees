@@ -3,8 +3,8 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { User } from '../user';
-import { UserService } from '../user-service.service';
+import { User } from '../user/user';
+import { UserService } from '../user/user-service.service';
 
 
 @Component({
@@ -39,7 +39,6 @@ export class UserEditComponent implements OnInit {
     });
   }
 
-  //ok
   getUser(){    
     const id = this.route.snapshot.paramMap.get('id');
     if(id)
@@ -49,19 +48,16 @@ export class UserEditComponent implements OnInit {
         this.createForm();
       });
   }
-  
-  //ok
+
   goBack(){    
     this.location.back();
   }
-  
-  //ok
+    
   delete(user:User){
     this.userService.deleteUser(user)
     .subscribe(() =>this.goBack());    
   }
   
-  //ok
   update(){    
     const user = this.userFormGroup.value;
     user._id = this.user._id;  

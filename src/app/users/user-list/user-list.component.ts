@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 
-import { User } from '../user';
-import { UserService } from '../user-service.service';
+import { User } from '../user/user';
+import { UserService } from '../user/user-service.service';
 
 @Component({
   selector: 'app-user-list',
@@ -17,8 +17,7 @@ export class UserListComponent implements OnInit {
   private showAddOption: boolean = false
   private addUserForm: FormGroup;
 
-  constructor(
-    private location: Location,
+  constructor(    
     private userService: UserService,
     private formBuilder: FormBuilder
   ) { }

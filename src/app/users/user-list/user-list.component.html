@@ -27,14 +27,13 @@
         </table>
     </div>
 </div>
-<!--colocar o css para aparecer o form de input-->
+
 <div *ngIf="showAddOption">
     <h1>Novo Usuário</h1>
     <div class="add-wrapper">    
         <h2>Adicionar Usuário</h2>
         <p>Os campos em vermelho são obrigatórios</p>
-        <app-user-form [userfg]="addUserForm"> </app-user-form>
-        <p>*Obs: Recarregue a página para visualizar os contatos recem adicionados</p>
+        <app-user-form [userfg]="addUserForm"> </app-user-form>        
         <button class="success" (click)="addUser()" [class]="addUserForm.invalid ? 'invalidForm': 'success' "
             [disabled]="addUserForm.invalid">Salvar</button>
         <button class="danger" (click)="showAddOption = false">Cancelar</button>
